@@ -1,3 +1,245 @@
-body{
-    background-color: pink;
+$font: "Helvetica Neue", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+
+
+//colors
+$white: #fff;
+$black: #000;
+$maroon: #83333e;
+$soft-white: #f2f4f5;
+
+
+html, body{
+    font-family: $font;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    width:1440px;
+    min-width: 1440px;
+    margin: 0 auto;
+    @media(max-width: 1440px){
+        width: 1280px;
+        min-width: 1280px;
+    }
+    @media(max-width: 1280px){
+        width: 976px;
+        min-width: 976px;
+    }
+    @media(max-width: 976px){
+        width: 768px;
+        min-width: 768px;
+    }
+}
+
+//header
+header{
+    height: 80px;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    z-index: 10;
+    .innerHeader{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 80px;
+        .logo{
+            a{
+                font-weight: 700;
+                text-decoration: none;
+                letter-spacing: 1.5px;
+                color: $black;
+            }
+        }
+        .navigation{
+            nav{
+                a{
+                    margin: 0 20px;
+                    text-decoration: none;
+                    letter-spacing: 1.75;
+                    text-transform: uppercase;
+                    font-size: 0.75rem;
+                    color: $black;
+                    &:last-child{
+                        margin-right: 0px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//banner
+.banner{
+    display: flex;
+    align-items: center;
+    background-color: $white;
+    position: relative;
+    height: 100vh;
+    .row{
+        position: relative;
+        .mainText{
+            font-size: 3.8rem;
+            text-transform: uppercase;
+            letter-spacing: 42px;
+            font-weight: 700;
+            color: $white;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+            mix-blend-mode: difference;
+            z-index: 9;
+            @media (max-width: 1440px){
+                font-size: 4.4rem;
+                letter-spacing: 36px;
+            }
+        }
+        .mainImage{
+            width: 436px;
+            margin: 0 auto;
+            @media (max-width: 1440px){
+                width: 336px;
+            }
+        }
+        .sideImage{
+            width: 280px;
+            position: absolute;
+            @media (max-width: 1440px){
+                width: 208px;
+            }
+            &.left{
+                left: 168px;
+                top: 12px;
+                @media (max-width: 1440px){
+                    left: 128px;
+                }
+            }
+            &.right{
+                right: 168px;
+                bottom: 12px;
+                @media (max-width: 1440px){
+                    right: 128px;
+                }
+            }
+        }
+    }
+    .scroll{
+        font-weight: 700;
+        font-size: .875rem;
+        letter-spacing: 1.5px;
+        color: $black;
+        text-transform: uppercase;
+        position: absolute;
+        bottom: 48px;
+    }
+    .fixedMisc{
+        position: fixed;
+        top: 50%;
+        right: -30px;
+        transform: rotate(-90deg);
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: .875rem;
+        letter-spacing: 1.5px;
+        color:$white;
+        mix-blend-mode: difference;
+        z-index: 8;
+        @media (max-width:1440px){
+            right:-112px;
+        }
+    }
+}
+
+//about
+.about{
+    padding: 48px 0;
+    background: $white;
+    position: relative;
+    .innerBlurb{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .content{
+            width: 33%;
+            @media (max-width:1440px){
+                width: 40%;
+            }
+            h3{
+                font-weight: 700;
+                text-transform: uppercase;
+                font-size: 1.8rem;
+                letter-spacing: 1.5px;
+                margin: 0;
+            }
+            p{
+                font-size: 1rem;
+                line-height: 2rem;
+                font-weight: 200;
+                margin: 40px 0 72px;
+            }
+            .btnRow{
+                a{
+                    font-weight: 700;
+                    font-size: .875rem;
+                    letter-spacing: 1.5px;
+                    color: $black;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                }
+            }
+        }
+        .images{
+            width: 50%;
+            height: 1000px;
+            position: relative;
+            z-index: 7;
+            @media (max-width:1440px){
+                height: 800px;
+            }
+            .topRight{
+                position: absolute;
+                width: 460px;
+                z-index: 4;
+                top: 0;
+                right: 0;
+                @media (max-width:1440px){
+                    height: 360px;
+                }
+            }
+            .bottomLeft{
+                position: absolute;
+                width: 410px;
+                left: 0;
+                bottom: 0;
+                @media (max-width:1440px){
+                    height: 310px;
+                }
+            }
+        }
+    }
+    .blackBox{
+        background-color: $black;
+        height: 480px;
+        width: 836px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        @media (max-width:1440px){
+            width: 636px;;
+            height: 340px;
+        }
+        &.overlay{
+            z-index: 7;
+            background: $maroon;
+            mix-blend-mode: overlay;
+        }
+    }
 }
